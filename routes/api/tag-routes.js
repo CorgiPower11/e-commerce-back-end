@@ -82,17 +82,7 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(dbTagData => {
-    if (!dbTagData[0]) {
-      res.statusMessage(404).json({message: 'No tag was found with this id provided'});
-      return;
-    }
-    res.json(dbTagData);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+  
 });
 
 module.exports = router;
